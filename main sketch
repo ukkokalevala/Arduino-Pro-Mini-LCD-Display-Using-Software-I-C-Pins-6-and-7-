@@ -1,0 +1,16 @@
+#include <SoftwareWire.h>
+#include "LiquidCrystal_I2C_soft.h"
+
+SoftwareWire myWire(6, 7);   // SDA, SCL
+LiquidCrystal_I2C lcd(&myWire, 0x27);
+
+void setup() {
+  lcd.init();
+  lcd.backlight();
+
+  lcd.setCursor(0, 0);
+  lcd.print("Hello World");
+}
+
+void loop() {
+}
